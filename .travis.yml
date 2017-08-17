@@ -1,4 +1,10 @@
 sudo: required
 
+language: node_js
+
 services:
   - docker
+
+after_success:
+  - docker build -t mpawlik/hyperflow .
+  - docker push mpawlik/hyperflow
